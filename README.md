@@ -45,6 +45,12 @@ You can download the latest release from github or git clone the project and use
 - For non Docker please check [Setup](https://github.com/secure-77/Perlite/wiki/01---Setup-(no-Docker))
 - For Docker, please check [Docker Setup](https://github.com/secure-77/Perlite/wiki/02---Setup-Docker)
 
+## Import from obsidian
+Execute:
+```bash
+python3 -m normalizer normalize <PATH-TO-VAULT>
+```
+It will fix the links and create `metadata.json` for graph.
 
 ## Wiki
 Please check the [wiki](https://github.com/secure-77/Perlite/wiki), here you will find further information, for example:

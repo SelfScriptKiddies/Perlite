@@ -1,0 +1,14 @@
+[Unit]
+Description=GitHub webhook receiver for Perlite deploy
+After=network.target
+
+[Service]
+User=<USER>
+Group=<GROUP>
+Environment=GITHUB_WEBHOOK_SECRET=<WEBHOOK-DATA>
+ExecStart=<ABSOLUTE-REPO-PATH>/deploy/.venv/python3 ./deploy/webhook.py
+Restart=always
+WorkingDirectory=<PATH-TO-REPO>
+
+[Install]
+WantedBy=multi-user.target

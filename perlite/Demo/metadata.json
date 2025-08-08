@@ -1,219 +1,2206 @@
 [
   {
-    "fileName": "README",
-    "relativePath": "README.md",
-    "tags": [
-      "tag-test"
-    ],
+    "fileName": "aiohttp sploit",
+    "relativePath": "CTF/Attack-Defense/aiohttp sploit.md",
     "headings": [
       {
-        "heading": "Perlite",
+        "heading": "Example usage:",
         "level": 1
       },
       {
-        "heading": "Documentation on Github",
+        "heading": "if __name__ == \"__main__\":",
+        "level": 1
+      },
+      {
+        "heading": "urls = [\"https://example.com/api/1\", \"https://example.com/api/2\", ...]",
+        "level": 1
+      },
+      {
+        "heading": "results = asyncio.run(fetch_urls(urls, concurrency=20, timeout_sec=5))",
+        "level": 1
+      },
+      {
+        "heading": "for url, res in results.items():",
+        "level": 1
+      },
+      {
+        "heading": "print(f\"{url}: {res}\")",
+        "level": 1
+      },
+      {
+        "heading": "Example:",
         "level": 2
       },
       {
-        "heading": "Features",
+        "heading": "Запустить сбор ответов",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "byobu",
+    "relativePath": "CTF/Attack-Defense/byobu.md"
+  },
+  {
+    "fileName": "must do",
+    "relativePath": "CTF/Attack-Defense/must do.md",
+    "headings": [
+      {
+        "heading": "Self-progress",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "random hex generator",
+    "relativePath": "CTF/Attack-Defense/random hex generator.md"
+  },
+  {
+    "fileName": "sploits",
+    "relativePath": "CTF/Attack-Defense/sploits.md",
+    "headings": [
+      {
+        "heading": "!/usr/bin/env python3",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "AR",
+    "relativePath": "CTF/pwn/AR.md",
+    "headings": [
+      {
+        "heading": "Arbitrary read",
+        "level": 1
+      },
+      {
+        "heading": "Stack leak",
         "level": 2
       },
       {
-        "heading": "Changelog",
+        "heading": "FS leak",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "AW",
+    "relativePath": "CTF/pwn/AW.md",
+    "headings": [
+      {
+        "heading": "Arbitrary write",
+        "level": 1
+      },
+      {
+        "heading": "Partial RELRO",
+        "level": 3
+      },
+      {
+        "heading": "Rewrite func without libc leak",
+        "level": 3
+      },
+      {
+        "heading": "Exit handlers",
+        "level": 3
+      },
+      {
+        "heading": "Rewrite func ret addr",
+        "level": 3
+      },
+      {
+        "heading": "Rewrite malloc/free hook",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Buffer overflow",
+    "relativePath": "CTF/pwn/Buffer overflow.md"
+  },
+  {
+    "fileName": "exit func",
+    "relativePath": "CTF/pwn/exit func.md",
+    "headings": [
+      {
+        "heading": "Mangling ptrs",
         "level": 2
       },
       {
-        "heading": "Why Perlite?",
+        "heading": "Where is struct",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Format String Bug",
+    "relativePath": "CTF/pwn/Format String Bug.md",
+    "headings": [
+      {
+        "heading": "Важный момент насчет `%n`",
+        "level": 3
+      },
+      {
+        "heading": "Формат payload",
+        "level": 3
+      },
+      {
+        "heading": "Payload для поиска контролируемого адреса",
+        "level": 4
+      },
+      {
+        "heading": "Важный момент!",
+        "level": 4
+      },
+      {
+        "heading": "Можно слить бинарник",
+        "level": 4
+      },
+      {
+        "heading": "Фишки параметров:",
+        "level": 3
+      },
+      {
+        "heading": "Что делать, если включен FULL-RELRO",
+        "level": 3
+      },
+      {
+        "heading": "write func",
+        "level": 3
+      },
+      {
+        "heading": "If no data stored on stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "fortify",
+    "relativePath": "CTF/pwn/fortify.md"
+  },
+  {
+    "fileName": "Function options",
+    "relativePath": "CTF/pwn/Function options.md",
+    "headings": [
+      {
+        "heading": "Args:",
+        "level": 3
+      },
+      {
+        "heading": "Libc addr",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "gdb",
+    "relativePath": "CTF/pwn/gdb.md",
+    "headings": [
+      {
+        "heading": "Get distance between 2 addr",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Get stack info",
+    "relativePath": "CTF/pwn/Get stack info.md"
+  },
+  {
+    "fileName": "Heap moment",
+    "relativePath": "CTF/pwn/Heap moment.md"
+  },
+  {
+    "fileName": "Number overflow",
+    "relativePath": "CTF/pwn/Number overflow.md",
+    "headings": [
+      {
+        "heading": "Если нужно обойти проверку индекса:",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Pwntools",
+    "relativePath": "CTF/pwn/Pwntools.md",
+    "headings": [
+      {
+        "heading": "Send without `\\n`",
         "level": 2
       },
       {
-        "heading": "Safe Mode Test",
+        "heading": "Fast transfer integer to bytes with right order",
+        "level": 2
+      },
+      {
+        "heading": "Byobu new screen gdb",
+        "level": 2
+      },
+      {
+        "heading": "Convert negative value to 8 bytes",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "qemu",
+    "relativePath": "CTF/pwn/qemu.md",
+    "headings": [
+      {
+        "heading": "Exec stack",
         "level": 2
       }
     ]
   },
   {
-    "fileName": "Markdown Samples",
-    "relativePath": "Demo Documents/Markdown Samples.md",
-    "tags": [
-      "tag-test",
-      "readme"
-    ],
+    "fileName": "ROP",
+    "relativePath": "CTF/pwn/ROP.md",
     "headings": [
       {
-        "heading": "h1 Heading",
-        "level": 1
-      },
-      {
-        "heading": "h2 Heading",
-        "level": 2
-      },
-      {
-        "heading": "h3 Heading",
+        "heading": "Gadgets pwntools",
         "level": 3
       },
       {
-        "heading": "h4 Heading",
+        "heading": "Get `/bin/sh`",
         "level": 4
       },
       {
-        "heading": "h5 Heading",
-        "level": 5
-      },
-      {
-        "heading": "h6 Heading",
-        "level": 6
-      },
-      {
-        "heading": "Horizontal Rules (--)",
+        "heading": "Segmentation fault",
         "level": 2
       },
       {
-        "heading": "Tags",
-        "level": 2
-      },
-      {
-        "heading": "Emphasis",
-        "level": 2
-      },
-      {
-        "heading": "Lists",
-        "level": 2
-      },
-      {
-        "heading": "Paragraphs and Blockquote",
-        "level": 2
-      },
-      {
-        "heading": "Blockquote",
+        "heading": "ROP-to-Shellcode",
         "level": 3
       },
       {
-        "heading": "Code",
+        "heading": "Создаем rwx сегмент памяти",
+        "level": 4
+      },
+      {
+        "heading": "ASM lifehack",
+        "level": 3
+      },
+      {
+        "heading": "Меняем стэк на нужный нам адрес",
+        "level": 3
+      },
+      {
+        "heading": "Если не можем предугадать точное место, куда попадем",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Shellcodes",
+    "relativePath": "CTF/pwn/Shellcodes.md",
+    "headings": [
+      {
+        "heading": "Сайт готовых шеллкодов",
+        "level": 3
+      },
+      {
+        "heading": "Syscalls list",
         "level": 2
       },
       {
-        "heading": "Tables",
+        "heading": "Для своего шеллкода:",
+        "level": 3
+      },
+      {
+        "heading": "Правила написания",
+        "level": 3
+      },
+      {
+        "heading": "Чтобы превратить в `ELF`:",
+        "level": 3
+      },
+      {
+        "heading": "Size optimization",
+        "level": 3
+      },
+      {
+        "heading": "Getting rwx segment",
+        "level": 3
+      },
+      {
+        "heading": "MMAP Syscall",
+        "level": 3
+      },
+      {
+        "heading": "Tricks",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "start with another libc",
+    "relativePath": "CTF/pwn/start with another libc.md",
+    "headings": [
+      {
+        "heading": "Variant 1:",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Struct module",
+    "relativePath": "CTF/pwn/Struct module.md",
+    "headings": [
+      {
+        "heading": "Pack/unpack",
+        "level": 3
+      },
+      {
+        "heading": "Example",
+        "level": 4
+      },
+      {
+        "heading": "Also can use pwntools:",
+        "level": 5
+      },
+      {
+        "heading": "Byte-order",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "x86",
+    "relativePath": "CTF/pwn/x86.md",
+    "headings": [
+      {
+        "heading": "Аргументы",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Check fuzzer stats",
+    "relativePath": "CTF/pwn/fuzzing/Check fuzzer stats.md"
+  },
+  {
+    "fileName": "FUTAG",
+    "relativePath": "CTF/pwn/fuzzing/FUTAG.md",
+    "headings": [
+      {
+        "heading": "Idea",
+        "level": 2
+      },
+      {
+        "heading": "Installation",
+        "level": 2
+      },
+      {
+        "heading": "Examples",
+        "level": 2
+      },
+      {
+        "heading": "Analyze",
+        "level": 4
+      },
+      {
+        "heading": "Generate wrappers",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "Fuzzing binary",
+    "relativePath": "CTF/pwn/fuzzing/Fuzzing binary.md"
+  },
+  {
+    "fileName": "Fuzzing source",
+    "relativePath": "CTF/pwn/fuzzing/Fuzzing source.md",
+    "headings": [
+      {
+        "heading": "Compiling",
+        "level": 2
+      },
+      {
+        "heading": "Start fuzzing",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "libFuzzer",
+    "relativePath": "CTF/pwn/fuzzing/libFuzzer.md",
+    "tags": [
+      "if",
+      "endif",
+      "include"
+    ],
+    "headings": [
+      {
+        "heading": "How to use",
+        "level": 2
+      },
+      {
+        "heading": "Create func LLVMFuzzerTestOneInput",
+        "level": 3
+      },
+      {
+        "heading": "Compiling",
+        "level": 2
+      },
+      {
+        "heading": "Options",
+        "level": 2
+      },
+      {
+        "heading": "Test input",
+        "level": 2
+      },
+      {
+        "heading": "Coverage collection",
+        "level": 3
+      },
+      {
+        "heading": "For better fuzzing",
+        "level": 3
+      },
+      {
+        "heading": "Hack for better debug",
+        "level": 3
+      },
+      {
+        "heading": "if defined(__GNUC__) || defined(__clang__)",
+        "level": 1
+      },
+      {
+        "heading": "endif",
+        "level": 1
+      },
+      {
+        "heading": "include <stdio.h>",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "minimize payload",
+    "relativePath": "CTF/pwn/fuzzing/minimize payload.md",
+    "headings": [
+      {
+        "heading": "To minimize use",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "preeny",
+    "relativePath": "CTF/pwn/fuzzing/preeny.md",
+    "headings": [
+      {
+        "heading": "To compile:",
+        "level": 2
+      },
+      {
+        "heading": "To use preeny",
+        "level": 3
+      },
+      {
+        "heading": "Binary that uses fork",
+        "level": 2
+      },
+      {
+        "heading": "To debug in gdb",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "sanitizers",
+    "relativePath": "CTF/pwn/fuzzing/sanitizers.md"
+  },
+  {
+    "fileName": "Split between computers and cores",
+    "relativePath": "CTF/pwn/fuzzing/Split between computers and cores.md",
+    "headings": [
+      {
+        "heading": "1 PC, 2 cores",
+        "level": 2
+      },
+      {
+        "heading": "2 PC",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "static func fuzzing",
+    "relativePath": "CTF/pwn/fuzzing/static func fuzzing.md",
+    "headings": [
+      {
+        "heading": "If you need to fuzz static func",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "2free",
+    "relativePath": "CTF/pwn/heap/2free.md",
+    "headings": [
+      {
+        "heading": "Алгоритм поиска:",
+        "level": 3
+      },
+      {
+        "heading": "Алгоритм эксплуатации:",
+        "level": 3
+      },
+      {
+        "heading": "Защиты хипа",
+        "level": 3
+      },
+      {
+        "heading": "Double free detected in tcache:",
+        "level": 4
+      },
+      {
+        "heading": "double free or corruption (fasttop)",
+        "level": 4
+      },
+      {
+        "heading": "в случае таска logger_easy (аллокация одного объекта внутри другого + либса < 2.31)",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "General info",
+    "relativePath": "CTF/pwn/heap/General info.md",
+    "headings": [
+      {
+        "heading": "heap chunks has 8 bytes of service data",
+        "level": 3
+      },
+      {
+        "heading": "heap aligns data inside it by 0x10",
+        "level": 3
+      },
+      {
+        "heading": "minimum chunk is 0x20",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "leak heap",
+    "relativePath": "CTF/pwn/heap/leak heap.md"
+  },
+  {
+    "fileName": "leak libc",
+    "relativePath": "CTF/pwn/heap/leak libc.md",
+    "headings": [
+      {
+        "heading": "Алгоритм:",
+        "level": 3
+      },
+      {
+        "heading": "Примечание",
+        "level": 4
+      },
+      {
+        "heading": "Результат",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Mangling pointer",
+    "relativePath": "CTF/pwn/heap/Mangling pointer.md",
+    "headings": [
+      {
+        "heading": "mangle code:",
+        "level": 3
+      },
+      {
+        "heading": "demangle code:",
+        "level": 3
+      },
+      {
+        "heading": "crack mangle code:",
+        "level": 3
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "structures when free",
+        "link": "Mangling pointer",
+        "relativePath": "CTF/pwn/heap/structures when free.md",
+        "displayText": "Mangling pointer"
+      }
+    ]
+  },
+  {
+    "fileName": "structures when free",
+    "relativePath": "CTF/pwn/heap/structures when free.md",
+    "headings": [
+      {
+        "heading": "Tcache",
+        "level": 1
+      },
+      {
+        "heading": "Fastbin",
+        "level": 1
+      },
+      {
+        "heading": "unsorted bin",
+        "level": 1
+      }
+    ],
+    "links": [
+      {
+        "link": "Mangling pointer",
+        "relativePath": "CTF/pwn/heap/Mangling pointer.md",
+        "displayText": "mangled"
+      }
+    ]
+  },
+  {
+    "fileName": "tcache poisoning",
+    "relativePath": "CTF/pwn/heap/tcache poisoning.md",
+    "headings": [
+      {
+        "heading": "Algorithm",
+        "level": 3
+      },
+      {
+        "heading": "Chunk algorithm",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Type confusion",
+    "relativePath": "CTF/pwn/heap/Type confusion.md",
+    "headings": [
+      {
+        "heading": "Неинициализированные массивы",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "UAF",
+    "relativePath": "CTF/pwn/heap/UAF.md",
+    "headings": [
+      {
+        "heading": "Стратегия",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "vptr",
+    "relativePath": "CTF/pwn/heap/vptr.md",
+    "headings": [
+      {
+        "heading": "vtable",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "__free_hook or __malloc_hook",
+    "relativePath": "CTF/pwn/heap/__free_hook or __malloc_hook.md",
+    "headings": [
+      {
+        "heading": "UAF algorithm to RCE",
+        "level": 3
+      },
+      {
+        "heading": "Double free algorithm",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "analysis",
+    "relativePath": "CTF/pwn/kernel/analysis.md",
+    "headings": [
+      {
+        "heading": "For every module you must write:",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "debug",
+    "relativePath": "CTF/pwn/kernel/debug.md",
+    "headings": [
+      {
+        "heading": "GDB start",
+        "level": 2
+      },
+      {
+        "heading": "If gdb not recognizing arch",
+        "level": 2
+      },
+      {
+        "heading": "To see pointers disable protection",
+        "level": 2
+      },
+      {
+        "heading": "echo 2 > /proc/sys/kernel/kptr_restrict",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "exploiting",
+    "relativePath": "CTF/pwn/kernel/exploiting.md",
+    "headings": [
+      {
+        "heading": "!/bin/sh",
+        "level": 1
+      },
+      {
+        "heading": "sock = Socket(\"HOST\", PORT) # remote",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "FAQ files",
+    "relativePath": "CTF/pwn/kernel/FAQ files.md"
+  },
+  {
+    "fileName": "funcs",
+    "relativePath": "CTF/pwn/kernel/funcs.md",
+    "headings": [
+      {
+        "heading": "commit_creds",
+        "level": 2
+      },
+      {
+        "heading": "check loaded modules",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "guide",
+    "relativePath": "CTF/pwn/kernel/guide.md"
+  },
+  {
+    "fileName": "heap",
+    "relativePath": "CTF/pwn/kernel/heap.md",
+    "headings": [
+      {
+        "heading": "Allocator check",
+        "level": 2
+      },
+      {
+        "heading": "SLAB",
+        "level": 2
+      },
+      {
+        "heading": "SLUB",
+        "level": 2
+      },
+      {
+        "heading": "SLOB",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "initialization chapter",
+    "relativePath": "CTF/pwn/kernel/initialization chapter.md"
+  },
+  {
+    "fileName": "LPE methods",
+    "relativePath": "CTF/pwn/kernel/LPE methods.md",
+    "headings": [
+      {
+        "heading": "commit_creds",
+        "level": 2
+      },
+      {
+        "heading": "ROP",
+        "level": 2
+      },
+      {
+        "heading": "Change cred struct (UAF works!)",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "pack-unpack",
+    "relativePath": "CTF/pwn/kernel/pack-unpack.md",
+    "headings": [
+      {
+        "heading": "CPIO",
+        "level": 2
+      },
+      {
+        "heading": "extract",
+        "level": 3
+      },
+      {
+        "heading": "pack",
+        "level": 2
+      },
+      {
+        "heading": "ext3",
+        "level": 2
+      },
+      {
+        "heading": "extract",
+        "level": 3
+      },
+      {
+        "heading": "If you get “unknown filesystem type” you may need to specify `-t ext3`",
+        "level": 1
+      },
+      {
+        "heading": "pack",
+        "level": 3
+      },
+      {
+        "heading": "check",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "protections",
+    "relativePath": "CTF/pwn/kernel/protections.md",
+    "headings": [
+      {
+        "heading": "SMEP (Supervisor Mode Execution Prevention)",
+        "level": 2
+      },
+      {
+        "heading": "enable",
+        "level": 4
+      },
+      {
+        "heading": "check",
+        "level": 4
+      },
+      {
+        "heading": "SMAP (Supervisor Mode Access Prevention)",
+        "level": 2
+      },
+      {
+        "heading": "enable",
+        "level": 4
+      },
+      {
+        "heading": "check",
+        "level": 4
+      },
+      {
+        "heading": "KASLR",
+        "level": 2
+      },
+      {
+        "heading": "disable in qemu",
+        "level": 4
+      },
+      {
+        "heading": "base addr if disabled",
+        "level": 4
+      },
+      {
+        "heading": "KPTI",
+        "level": 2
+      },
+      {
+        "heading": "enable in qemu",
+        "level": 4
+      },
+      {
+        "heading": "check",
+        "level": 4
+      },
+      {
+        "heading": "Bypass if crashes exploit:",
+        "level": 4
+      },
+      {
+        "heading": "KADR (Kernel Address Display Restriction)",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "pointer compression",
+    "relativePath": "CTF/pwn/v8/pointer compression.md"
+  },
+  {
+    "fileName": "primitives",
+    "relativePath": "CTF/pwn/v8/primitives.md",
+    "headings": [
+      {
+        "heading": "addrof(obj)",
+        "level": 3
+      },
+      {
+        "heading": "fakeobj(addr)",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Arithmetic operations",
+    "relativePath": "CTF/reverse/angr/Arithmetic operations.md",
+    "headings": [
+      {
+        "heading": "Python num and BVS",
+        "level": 1
+      },
+      {
+        "heading": "Different bitwise",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Commands",
+    "relativePath": "CTF/reverse/asm/Commands.md",
+    "headings": [
+      {
+        "heading": "Intel vs AT&T",
+        "level": 3
+      },
+      {
+        "heading": "leave",
+        "level": 3
+      },
+      {
+        "heading": "ret",
+        "level": 3
+      },
+      {
+        "heading": "xor",
+        "level": 3
+      },
+      {
+        "heading": "db - 1 byte (char)",
+        "level": 3
+      },
+      {
+        "heading": "dw - 2 bytes (short)",
+        "level": 3
+      },
+      {
+        "heading": "dd - 4 bytes (int)",
+        "level": 3
+      },
+      {
+        "heading": "dq - 8 bytes (long)",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Registers",
+    "relativePath": "CTF/reverse/asm/Registers.md",
+    "headings": [
+      {
+        "heading": "x32/x64",
+        "level": 1
+      },
+      {
+        "heading": "**eax/rax**",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Hotkeys",
+    "relativePath": "CTF/reverse/binja/Hotkeys.md",
+    "headings": [
+      {
+        "heading": "ASM -> Pseudo C",
+        "level": 3
+      },
+      {
+        "heading": "CFG",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "dump memory",
+    "relativePath": "CTF/reverse/gdb/dump memory.md"
+  },
+  {
+    "fileName": "Bugs",
+    "relativePath": "CTF/reverse/ida/Bugs.md",
+    "headings": [
+      {
+        "heading": "Not decompiling",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Features",
+    "relativePath": "CTF/reverse/ida/Features.md",
+    "headings": [
+      {
+        "heading": "Snapshots",
+        "level": 3
+      },
+      {
+        "heading": "Mark as decompiled",
+        "level": 3
+      },
+      {
+        "heading": "Change int to pointer",
+        "level": 3
+      },
+      {
+        "heading": "To parse as string",
+        "level": 3
+      },
+      {
+        "heading": "To create sum of flags (bitfield) need to check up opt",
+        "level": 3
+      },
+      {
+        "heading": "Blue variables - global, gray - local",
+        "level": 3
+      },
+      {
+        "heading": "Map variable - delete ptrs dup, map ptr to ...",
+        "level": 3
+      },
+      {
+        "heading": "Collapse item - for close if",
+        "level": 3
+      },
+      {
+        "heading": "Can write structs in .h files and parse from ida",
+        "level": 3
+      },
+      {
+        "heading": "Can edit to switch",
+        "level": 3
+      },
+      {
+        "heading": "Local variables (DEBUG)",
+        "level": 3
+      },
+      {
+        "heading": "To fix Positive SP Values",
+        "level": 3
+      },
+      {
+        "heading": "If function is not all",
+        "level": 3
+      },
+      {
+        "heading": "To set code on binary",
+        "level": 3
+      },
+      {
+        "heading": "To set function on assemble",
+        "level": 3
+      },
+      {
+        "heading": "If identical variables",
+        "level": 3
+      },
+      {
+        "heading": "Rebase prog",
+        "level": 3
+      },
+      {
+        "heading": "Double click to variable to see it on stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Hotkeys",
+    "relativePath": "CTF/reverse/ida/Hotkeys.md",
+    "headings": [
+      {
+        "heading": "n",
+        "level": 3
+      },
+      {
+        "heading": "INS",
+        "level": 3
+      },
+      {
+        "heading": "/",
+        "level": 3
+      },
+      {
+        "heading": "<SHIFT + \\*>  in assembly",
+        "level": 3
+      },
+      {
+        "heading": "Y on function",
+        "level": 3
+      },
+      {
+        "heading": "CTRL + SHIFT + T",
+        "level": 3
+      },
+      {
+        "heading": "F5",
+        "level": 3
+      },
+      {
+        "heading": "SHIFT + F12",
+        "level": 3
+      },
+      {
+        "heading": "X on everything",
+        "level": 3
+      },
+      {
+        "heading": "H",
+        "level": 3
+      },
+      {
+        "heading": "Tab",
+        "level": 3
+      },
+      {
+        "heading": "SHIFT + F10",
+        "level": 3
+      },
+      {
+        "heading": "CTRL + U",
+        "level": 3
+      },
+      {
+        "heading": "ALT + A",
+        "level": 3
+      },
+      {
+        "heading": "SHIFT + F9",
+        "level": 3
+      },
+      {
+        "heading": "D on structure",
+        "level": 3
+      },
+      {
+        "heading": "ALT+D",
+        "level": 3
+      },
+      {
+        "heading": "Down + D",
+        "level": 3
+      },
+      {
+        "heading": "ALT+K",
+        "level": 3
+      },
+      {
+        "heading": "F2",
+        "level": 3
+      },
+      {
+        "heading": "C",
+        "level": 3
+      },
+      {
+        "heading": "ALT + K",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "IDAPython",
+    "relativePath": "CTF/reverse/ida/IDAPython.md",
+    "headings": [
+      {
+        "heading": "ida_bytes.patch_byte(addr, new_num)",
+        "level": 3
+      },
+      {
+        "heading": "idc.get_wide_dword(addr)",
+        "level": 3
+      },
+      {
+        "heading": "Debug Python",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Optimized",
+    "relativePath": "CTF/reverse/ida/Optimized.md",
+    "headings": [
+      {
+        "heading": "strlen",
+        "level": 3
+      },
+      {
+        "heading": "strcmp",
+        "level": 3
+      },
+      {
+        "heading": "strcat",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Ponce",
+    "relativePath": "CTF/reverse/ida/Ponce.md",
+    "headings": [
+      {
+        "heading": "Symbolic",
+        "level": 3
+      },
+      {
+        "heading": "Отслеживаемые переменные",
+        "level": 3
+      },
+      {
+        "heading": "Negate and inject",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "decompyle",
+    "relativePath": "CTF/reverse/python/decompyle.md"
+  },
+  {
+    "fileName": "rol ror",
+    "relativePath": "CTF/reverse/python/rol ror.md",
+    "headings": [
+      {
+        "heading": "Rotate left: 0b1001 --> 0b0011",
+        "level": 1
+      },
+      {
+        "heading": "Rotate right: 0b1001 --> 0b1100",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "ltrace",
+    "relativePath": "CTF/reverse/tools/ltrace.md",
+    "headings": [
+      {
+        "heading": "-e",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Apache AW + LFI to RCE",
+    "relativePath": "CTF/web/Apache AW + LFI to RCE.md",
+    "headings": [
+      {
+        "heading": "Write the shell to /tmp/shell.php",
+        "level": 3
+      },
+      {
+        "heading": "Exploit LFI to trigger Apache php file loading",
+        "level": 2
+      },
+      {
+        "heading": "Filters LFI to RCE",
+        "level": 2
+      },
+      {
+        "heading": "If system is undefined:",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "burp",
+    "relativePath": "CTF/web/burp.md"
+  },
+  {
+    "fileName": "file upload",
+    "relativePath": "CTF/web/file upload.md",
+    "headings": [
+      {
+        "heading": "Burpsuite",
+        "level": 3
+      },
+      {
+        "heading": "Broot file extensions:",
+        "level": 4
+      },
+      {
+        "heading": "php extension list",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "flask",
+    "relativePath": "CTF/web/flask.md",
+    "headings": [
+      {
+        "heading": "File names:",
+        "level": 3
+      },
+      {
+        "heading": "To send command to debugger (know pin)",
+        "level": 3
+      },
+      {
+        "heading": "LFI to RCE",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "lifehacks",
+    "relativePath": "CTF/web/lifehacks.md"
+  },
+  {
+    "fileName": "php rce",
+    "relativePath": "CTF/web/php rce.md",
+    "headings": [
+      {
+        "heading": "Usage:",
+        "level": 3
+      },
+      {
+        "heading": "wordpress upload",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "sqli",
+    "relativePath": "CTF/web/sqli.md",
+    "headings": [
+      {
+        "heading": "Cheatsheet",
+        "level": 3
+      },
+      {
+        "heading": "Find sqli",
+        "level": 3
+      },
+      {
+        "heading": "Алгоритм поиска количества колонок в SQL-query",
+        "level": 3
+      },
+      {
+        "heading": "Алгоритм поиска нужной нам колонки",
+        "level": 3
+      },
+      {
+        "heading": "Run out of sqlinj",
+        "level": 3
+      },
+      {
+        "heading": "Blind SQL inj",
+        "level": 3
+      },
+      {
+        "heading": "Error-based SQL inj",
+        "level": 3
+      },
+      {
+        "heading": "Test:",
+        "level": 4
+      },
+      {
+        "heading": "Exploit:",
+        "level": 4
+      },
+      {
+        "heading": "Error-based",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "bypass network filter",
+    "relativePath": "pentest/bypass network filter.md"
+  },
+  {
+    "fileName": "deliver files",
+    "relativePath": "pentest/deliver files.md",
+    "headings": [
+      {
+        "heading": "Attacker",
+        "level": 3
+      },
+      {
+        "heading": "Victim",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "dns",
+    "relativePath": "pentest/dns.md"
+  },
+  {
+    "fileName": "FFUF",
+    "relativePath": "pentest/FFUF.md"
+  },
+  {
+    "fileName": "Hydra",
+    "relativePath": "pentest/Hydra.md"
+  },
+  {
+    "fileName": "john",
+    "relativePath": "pentest/john.md"
+  },
+  {
+    "fileName": "SOCKS pivot",
+    "relativePath": "pentest/SOCKS pivot.md",
+    "headings": [
+      {
+        "heading": "chisel",
+        "level": 2
+      },
+      {
+        "heading": "Description",
+        "level": 3
+      },
+      {
+        "heading": "Как прокинуть socks-туннель на машину, не открывая порты",
+        "level": 3
+      },
+      {
+        "heading": "proxychains",
+        "level": 3
+      },
+      {
+        "heading": "ssh",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "stabilize shell",
+    "relativePath": "pentest/stabilize shell.md"
+  },
+  {
+    "fileName": "vhost",
+    "relativePath": "pentest/vhost.md"
+  },
+  {
+    "fileName": "Authentication",
+    "relativePath": "pentest/active directory/Authentication.md",
+    "headings": [
+      {
+        "heading": "Kerberos",
+        "level": 1
+      },
+      {
+        "heading": "TGT",
+        "level": 3
+      },
+      {
+        "heading": "TGS",
+        "level": 3
+      },
+      {
+        "heading": "NTLM",
+        "level": 1
+      },
+      {
+        "heading": "LDAP",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "BloodHound",
+    "relativePath": "pentest/active directory/BloodHound.md",
+    "headings": [
+      {
+        "heading": "Collectors",
+        "level": 2
+      },
+      {
+        "heading": "SharpHound",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Domain Controller",
+    "relativePath": "pentest/active directory/Domain Controller.md"
+  },
+  {
+    "fileName": "Enumerating",
+    "relativePath": "pentest/active directory/Enumerating.md",
+    "headings": [
+      {
+        "heading": "Start program as another user",
+        "level": 2
+      },
+      {
+        "heading": "Configure DNS",
+        "level": 2
+      },
+      {
+        "heading": "Healthcheck",
+        "level": 2
+      },
+      {
+        "heading": "GUI method",
+        "level": 2
+      },
+      {
+        "heading": "CMD method",
+        "level": 3
+      },
+      {
+        "heading": "Users",
+        "level": 4
+      },
+      {
+        "heading": "Selected user",
+        "level": 4
+      },
+      {
+        "heading": "Groups",
+        "level": 4
+      },
+      {
+        "heading": "Selected group",
+        "level": 4
+      },
+      {
+        "heading": "Password policy",
+        "level": 4
+      },
+      {
+        "heading": "Powershell method",
+        "level": 3
+      },
+      {
+        "heading": "Users",
+        "level": 4
+      },
+      {
+        "heading": "Selected user",
+        "level": 4
+      },
+      {
+        "heading": "Groups",
+        "level": 4
+      },
+      {
+        "heading": "Selected group",
+        "level": 4
+      },
+      {
+        "heading": "Get accounts without badPwdLock",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "Exploiting",
+    "relativePath": "pentest/active directory/Exploiting.md",
+    "headings": [
+      {
+        "heading": "Bad permissions",
+        "level": 2
+      },
+      {
+        "heading": "GenericWrite",
+        "level": 3
+      },
+      {
+        "heading": "ForceChangePassword",
+        "level": 3
+      },
+      {
+        "heading": "Delegations",
+        "level": 2
+      },
+      {
+        "heading": "Check",
+        "level": 3
+      },
+      {
+        "heading": "Printer Spooler",
+        "level": 2
+      },
+      {
+        "heading": "Exploiting Authentication Relays",
+        "level": 2
+      },
+      {
+        "heading": "Setting NTLM relay",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "Initial Access",
+    "relativePath": "pentest/active directory/Initial Access.md",
+    "headings": [
+      {
+        "heading": "Get usernames",
+        "level": 3
+      },
+      {
+        "heading": "Password spraying",
+        "level": 3
+      },
+      {
+        "heading": "If got on service with LDAP",
+        "level": 3
+      },
+      {
+        "heading": "Find credentials",
+        "level": 3
+      }
+    ],
+    "links": [
+      {
+        "link": "LDAP Pass-back",
+        "relativePath": "pentest/active directory/LDAP Pass-back.md"
+      }
+    ]
+  },
+  {
+    "fileName": "LDAP Pass-back",
+    "relativePath": "pentest/active directory/LDAP Pass-back.md",
+    "tags": [
+      "olcSaslSecProps"
+    ],
+    "headings": [
+      {
+        "heading": "Идея",
+        "level": 2
+      },
+      {
+        "heading": "olcSaslSecProps.ldif",
+        "level": 1
+      },
+      {
+        "heading": "Troubleshooting",
         "level": 2
       }
     ],
     "backlinks": [
       {
-        "fileName": "Links and Embedded",
-        "link": "Markdown Samples",
-        "relativePath": "Demo Documents/Links and Embedded.md"
-      },
-      {
-        "fileName": "Links and Embedded",
-        "link": "Markdown Samples",
-        "relativePath": "Demo Documents/Links and Embedded.md",
-        "displayText": "Custom Link Name"
+        "fileName": "Initial Access",
+        "link": "LDAP Pass-back",
+        "relativePath": "pentest/active directory/Initial Access.md",
+        "displayText": "LDAP Pass-back"
       }
     ]
   },
   {
-    "fileName": "Links and Embedded",
-    "relativePath": "Demo Documents/Links and Embedded.md",
+    "fileName": "MDT",
+    "relativePath": "pentest/active directory/MDT.md",
     "headings": [
       {
-        "heading": "External Links",
-        "level": 1
-      },
-      {
-        "heading": "Files",
-        "level": 1
-      },
-      {
-        "heading": "Links to Headings",
+        "heading": "PXE",
         "level": 2
       },
       {
-        "heading": "Video",
+        "heading": "Attacks",
         "level": 2
       },
       {
-        "heading": "PDF",
-        "level": 2
-      }
-    ],
-    "links": [
-      {
-        "link": "Markdown Samples",
-        "relativePath": "Demo Documents/Markdown Samples.md"
-      },
-      {
-        "link": "Markdown Samples",
-        "displayText": "Custom Link Name",
-        "relativePath": "Demo Documents/Markdown Samples.md"
-      },
-      {
-        "link": "#PDF",
-        "relativePath": "Demo Documents/Links and Embedded.md",
-        "cleanLink": "Links and Embedded",
-        "displayText": "PDF"
-      },
-      {
-        "link": "#PDF",
-        "relativePath": "Demo Documents/Links and Embedded.md",
-        "cleanLink": "Links and Embedded",
-        "displayText": "Scroll to PDF"
-      }
-    ]
-  },
-  {
-    "fileName": "Latex and Mermaid",
-    "relativePath": "Demo Documents/Latex and Mermaid.md",
-    "headings": [
-      {
-        "heading": "LaTeX",
-        "level": 2
-      },
-      {
-        "heading": "Mermaid",
+        "heading": "PXE Boot Image Retrieval",
         "level": 2
       }
     ]
   },
   {
-    "fileName": "Images",
-    "relativePath": "Demo Documents/Images.md",
+    "fileName": "NTLM intercept",
+    "relativePath": "pentest/active directory/NTLM intercept.md",
     "headings": [
       {
-        "heading": "Internal Images",
-        "level": 1
+        "heading": "Идея атаки",
+        "level": 2
       },
       {
-        "heading": "External images",
+        "heading": "Реализация",
         "level": 2
       }
     ]
   },
   {
-    "fileName": "Callouts and Frontmatter",
-    "relativePath": "Demo Documents/Callouts and Frontmatter.md",
-    "tags": [
-      "tag1",
-      "tag-test",
-      "readme"
-    ],
-    "frontmatter": {},
-    "aliases": [
-      "Callouts",
-      "Frontsmatter",
-      "Sample"
-    ],
+    "fileName": "Pivoting",
+    "relativePath": "pentest/active directory/Pivoting.md",
     "headings": [
       {
-        "heading": "Blockquots",
-        "level": 1
-      },
-      {
-        "heading": "Callouts",
+        "heading": "psexec",
         "level": 2
       },
       {
-        "heading": "Collapsible Callouts",
+        "heading": "winrm",
         "level": 2
+      },
+      {
+        "heading": "cmd:",
+        "level": 4
+      },
+      {
+        "heading": "powershell",
+        "level": 4
+      },
+      {
+        "heading": "sc",
+        "level": 2
+      },
+      {
+        "heading": "Scheduled Tasks",
+        "level": 2
+      },
+      {
+        "heading": "SMB upload file",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "PTH-PTT",
+    "relativePath": "pentest/active directory/PTH-PTT.md",
+    "headings": [
+      {
+        "heading": "PTT",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Structure example",
+    "relativePath": "pentest/active directory/Structure example.md"
+  },
+  {
+    "fileName": "kekeo",
+    "relativePath": "pentest/active directory/tools/kekeo.md",
+    "headings": [
+      {
+        "heading": "tgt::ask",
+        "level": 2
+      },
+      {
+        "heading": "tgs::s4u",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "mimikatz",
+    "relativePath": "pentest/active directory/tools/mimikatz.md",
+    "headings": [
+      {
+        "heading": "token::elevate",
+        "level": 2
+      },
+      {
+        "heading": "lsadump::secrets",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "guides",
+    "relativePath": "pentest/lpe/linux/guides.md"
+  },
+  {
+    "fileName": "info gather",
+    "relativePath": "pentest/lpe/linux/info gather.md",
+    "headings": [
+      {
+        "heading": "Сети",
+        "level": 4
+      },
+      {
+        "heading": "Automated checkers",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "capabilities",
+    "relativePath": "pentest/lpe/linux/vectors/capabilities.md"
+  },
+  {
+    "fileName": "cronjobs",
+    "relativePath": "pentest/lpe/linux/vectors/cronjobs.md"
+  },
+  {
+    "fileName": "kernel exploit",
+    "relativePath": "pentest/lpe/linux/vectors/kernel exploit.md"
+  },
+  {
+    "fileName": "network file sharing",
+    "relativePath": "pentest/lpe/linux/vectors/network file sharing.md"
+  },
+  {
+    "fileName": "path",
+    "relativePath": "pentest/lpe/linux/vectors/path.md"
+  },
+  {
+    "fileName": "proc mounted",
+    "relativePath": "pentest/lpe/linux/vectors/proc mounted.md",
+    "headings": [
+      {
+        "heading": "LFI AR/AW",
+        "level": 2
+      },
+      {
+        "heading": "Shell",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "sudo",
+    "relativePath": "pentest/lpe/linux/vectors/sudo.md",
+    "headings": [
+      {
+        "heading": "Hijacking LD_PRELOAD:",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "suid",
+    "relativePath": "pentest/lpe/linux/vectors/suid.md",
+    "headings": [
+      {
+        "heading": "Read permission",
+        "level": 3
+      },
+      {
+        "heading": "Write permission",
+        "level": 3
+      },
+      {
+        "heading": "Переписываем файл паролей",
+        "level": 4
+      },
+      {
+        "heading": "Создаем пользователя с рут шеллом",
+        "level": 3
+      },
+      {
+        "heading": "Еще один вариант создать пароль",
+        "level": 4
+      },
+      {
+        "heading": "Генерация случайного hex-числа",
+        "level": 4
+      },
+      {
+        "heading": "Инжект своих бинарных файлов",
+        "level": 4
+      },
+      {
+        "heading": "Debug mode bash",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "wildcard",
+    "relativePath": "pentest/lpe/linux/vectors/wildcard.md",
+    "headings": [
+      {
+        "heading": "Пример",
+        "level": 4
+      },
+      {
+        "heading": "Команда:",
+        "level": 5
+      },
+      {
+        "heading": "Инжект",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "fileName": "add other user",
+    "relativePath": "pentest/lpe/windows/add other user.md"
+  },
+  {
+    "fileName": "AlwaysInstallElevated",
+    "relativePath": "pentest/lpe/windows/AlwaysInstallElevated.md",
+    "headings": [
+      {
+        "heading": "Проверяем, установлены ли следующие значения регистра:",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "DACL",
+    "relativePath": "pentest/lpe/windows/DACL.md"
+  },
+  {
+    "fileName": "folder rights",
+    "relativePath": "pentest/lpe/windows/folder rights.md",
+    "headings": [
+      {
+        "heading": "Проверить права файла:",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "password files",
+    "relativePath": "pentest/lpe/windows/password files.md",
+    "headings": [
+      {
+        "heading": "Unattended installation",
+        "level": 3
+      },
+      {
+        "heading": "Powershell history",
+        "level": 3
+      },
+      {
+        "heading": "Saved creds",
+        "level": 3
+      },
+      {
+        "heading": "IIS",
+        "level": 3
+      },
+      {
+        "heading": "Putty",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "profiles",
+    "relativePath": "pentest/lpe/windows/profiles.md"
+  },
+  {
+    "fileName": "scheduled tasks",
+    "relativePath": "pentest/lpe/windows/scheduled tasks.md"
+  },
+  {
+    "fileName": "services",
+    "relativePath": "pentest/lpe/windows/services.md",
+    "headings": [
+      {
+        "heading": "Сгенерировать пейлоад-сервис",
+        "level": 4
+      },
+      {
+        "heading": "Незакованный в кавычки путь",
+        "level": 3
+      },
+      {
+        "heading": "Чтобы посмотреть права на сервис",
+        "level": 3
+      },
+      {
+        "heading": "Если можем менять конфиг",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "smbserver",
+    "relativePath": "pentest/lpe/windows/smbserver.md",
+    "headings": [
+      {
+        "heading": "Kali install:",
+        "level": 3
+      },
+      {
+        "heading": "cmd copy",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "software",
+    "relativePath": "pentest/lpe/windows/software.md",
+    "headings": [
+      {
+        "heading": "Get info:",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "tools",
+    "relativePath": "pentest/lpe/windows/tools.md"
+  },
+  {
+    "fileName": "user privileges",
+    "relativePath": "pentest/lpe/windows/user privileges.md",
+    "headings": [
+      {
+        "heading": "URLs",
+        "level": 2
+      },
+      {
+        "heading": "Common rights",
+        "level": 2
+      },
+      {
+        "heading": "SeBackup / SeRestore",
+        "level": 3
+      },
+      {
+        "heading": "SeTakeOwnership",
+        "level": 3
+      },
+      {
+        "heading": "SeImpersonate / SeAssignPrimaryToken",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Exploits",
+    "relativePath": "pentest/metasploit/Exploits.md",
+    "headings": [
+      {
+        "heading": "Show exploit options",
+        "level": 3
+      },
+      {
+        "heading": "Show payload variations",
+        "level": 3
+      },
+      {
+        "heading": "All information",
+        "level": 3
+      },
+      {
+        "heading": "Start sploit",
+        "level": 3
+      },
+      {
+        "heading": "After RCE sploit works",
+        "level": 3
+      },
+      {
+        "heading": "If used payload by msfvenom",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Meterpreter",
+    "relativePath": "pentest/metasploit/Meterpreter.md",
+    "headings": [
+      {
+        "heading": "To search file:",
+        "level": 3
+      },
+      {
+        "heading": "Get users hashes:",
+        "level": 3
+      },
+      {
+        "heading": "Start keylogger",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Modules",
+    "relativePath": "pentest/metasploit/Modules.md",
+    "headings": [
+      {
+        "heading": "Auxiliary",
+        "level": 3
+      },
+      {
+        "heading": "Encoders",
+        "level": 3
+      },
+      {
+        "heading": "Evasion",
+        "level": 3
+      },
+      {
+        "heading": "Exploits",
+        "level": 3
+      },
+      {
+        "heading": "Payloads",
+        "level": 3
+      },
+      {
+        "heading": "Post",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Workflow",
+    "relativePath": "pentest/metasploit/Workflow.md",
+    "headings": [
+      {
+        "heading": "Init",
+        "level": 3
+      },
+      {
+        "heading": "Interact with workspace",
+        "level": 3
+      },
+      {
+        "heading": "Scan and save to DB",
+        "level": 3
+      },
+      {
+        "heading": "Set RHOSTS to saved hosts",
+        "level": 3
+      },
+      {
+        "heading": "Search services through hosts",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "DHCP",
+    "relativePath": "pentest/network/DHCP.md",
+    "headings": [
+      {
+        "heading": "DHCP Discover",
+        "level": 3
+      },
+      {
+        "heading": "DHCP Offer",
+        "level": 3
+      },
+      {
+        "heading": "DHCP Request",
+        "level": 3
+      },
+      {
+        "heading": "DHCP Ack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "OSI",
+    "relativePath": "pentest/network/OSI.md",
+    "headings": [
+      {
+        "heading": "1. Physical",
+        "level": 3
+      },
+      {
+        "heading": "2. Data link",
+        "level": 3
+      },
+      {
+        "heading": "3. Network",
+        "level": 3
       }
     ]
   }
