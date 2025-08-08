@@ -50,6 +50,6 @@ class CodeMasker:
         s = masked.text
 
         # Replace tokens back in reverse to avoid partial overlaps
-        for idx, payload in enumerate(masked.slots):
-            s = s.replace(cls.TOKEN + str(idx), payload)
+        for idx in range(len(masked.slots) - 1, -1, -1):
+            s = s.replace(cls.TOKEN + str(idx), masked.slots[idx])
         return s

@@ -32,11 +32,12 @@ def process_file(p: Path, R: Resolver) -> Dict:
             new_text = norm
         p.write_text(new_text, encoding="utf-8")
 
-    headings = extract_headings_safe(norm.splitlines())
+    headings = extract_headings_safe(norm)
 
     links = []
+    masked = CodeMasker.mask(norm)
     # wikilinks (notes + anchors) — skip attachments (!)
-    for m in WIKI_LINK.finditer(norm):
+    for m in WIKI_LINK.finditer(masked.text):
         bang = m.group("bang")
         if bang == "!":
             continue
@@ -73,7 +74,7 @@ def process_file(p: Path, R: Resolver) -> Dict:
         links.append(entry)
 
     # pure anchor markdown links [text](#PDF)
-    for m in MD_LINK.finditer(norm):
+    for m in MD_LINK.finditer(masked.text):
         url = m.group("url").strip()
         if url.startswith("#"):
             anchor = url
