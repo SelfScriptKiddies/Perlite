@@ -1,6 +1,8 @@
 services:
   perlite:
     image: sec77/perlite:latest
+    build: 
+      context: perlite
     container_name: perlite
     restart: unless-stopped
     environment:
@@ -26,7 +28,8 @@ services:
       - SITE_TWITTER=
       - SITE_LOGO=perlite.svg
       - SITE_HOMEPAGE=https://perlite.secure77.de/
-      - SITE_GITHUB=https://github.com/SelfScriptKiddies/wiki-storage
+      - SITE_GITHUB=https://github.com/SelfScriptKiddies/Perlite
+      - GITHUB_STORAGE=https://github.com/SelfScriptKiddies/wiki-storage
     volumes:
       - ./storage:/var/www/perlite/highres:ro
 

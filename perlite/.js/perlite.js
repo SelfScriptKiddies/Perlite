@@ -159,9 +159,54 @@ function getContent(str, home = false, popHover = false, anchor = "") {
 
             $("title").text(title + ' - ' + $("p.vault").text() + ' - ' + $("p.perliteTitle").text());
 
-            // set edit button url
-            $('.clickable-icon.view-action[aria-label="Click to edit"]')
-              .attr("href", "obsidian://open?vault=" + encodeURIComponent($("p.vault").text()) + "&file=" + encodeURIComponent(title))
+            // set edit menu handlers (Obsidian / GitHub)
+            (function(){
+              var vault = $("p.vault").text();
+              var filePath = $("div.mdTitleHide").first().text().substring(1); // e.g. CTF/pwn/AR
+              var githubStorage = $("#githubStorage").data("option") || ""; // base repo url
+
+              // Build URLs
+              var obsidianUrl = "obsidian://open?vault=" + encodeURIComponent(vault) + "&file=" + encodeURIComponent(filePath);
+              var githubEditUrl = "";
+              if (githubStorage) {
+                // ensure no trailing slash
+                var base = githubStorage.replace(/\/$/, "");
+                githubEditUrl = base + "/edit/main/" + filePath + ".md";
+              }
+
+              var $edit = $(".clickable-icon.view-action.edit-action[aria-label='Click to edit']");
+
+              // Build or reuse menu
+              var $menu = $("#perlite-edit-menu");
+              if (!$menu.length) {
+                $menu = $('<div id="perlite-edit-menu" style="position:absolute; z-index:1000; display:none; background: var(--background-primary, #fff); border:1px solid var(--background-modifier-border, #ddd); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,.15); padding:6px 0; min-width: 180px;"></div>');
+                var itemCss = 'display:block; padding:8px 12px; color: var(--text-normal, #222); text-decoration:none; cursor:pointer;';
+                var hoverCss = 'background: var(--background-modifier-hover, #f5f5f5)';
+                var $obs = $('<a href="#" style="'+itemCss+'">Open in Obsidian</a>');
+                var $git = $('<a href="#" style="'+itemCss+'">Edit on GitHub</a>');
+                $obs.on('mouseenter', function(){ $(this).attr('style', itemCss+'; '+hoverCss); }).on('mouseleave', function(){ $(this).attr('style', itemCss); });
+                $git.on('mouseenter', function(){ $(this).attr('style', itemCss+'; '+hoverCss); }).on('mouseleave', function(){ $(this).attr('style', itemCss); });
+                $obs.on('click', function(e){ e.preventDefault(); window.location.href = obsidianUrl; hideMenu(); });
+                $git.on('click', function(e){ e.preventDefault(); if (githubEditUrl) { window.open(githubEditUrl, '_blank'); } hideMenu(); });
+                if (!githubStorage) { $git.css('opacity', 0.5).css('pointer-events','none').attr('title','GITHUB_STORAGE is not set'); }
+                $menu.append($obs, $git);
+                $('body').append($menu);
+              }
+
+              function showMenu(){
+                var off = $edit.offset();
+                var top = off.top + $edit.outerHeight() + 4;
+                var left = off.left - ($menu.outerWidth() - $edit.outerWidth());
+                $menu.css({top: top+"px", left: left+"px"}).show();
+                setTimeout(function(){ $(document).on('mousedown.perlite-edit-menu', function(ev){ if(!$(ev.target).closest('#perlite-edit-menu,.edit-action').length){ hideMenu(); } }); },0);
+              }
+              function hideMenu(){
+                $menu.hide();
+                $(document).off('mousedown.perlite-edit-menu');
+              }
+
+              $edit.off('click.perlite').on('click.perlite', function(e){ e.preventDefault(); if($menu.is(':visible')){ hideMenu(); } else { showMenu(); } });
+            })();
           }
 
           // Outlines

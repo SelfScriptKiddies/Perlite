@@ -64,6 +64,9 @@ if (empty($siteGithub))
 	$siteGithub = getenv("SITE_GITHUB");
 if (!isset($siteTwitter))
 	$siteTwitter = getenv('SITE_TWITTER');
+// GitHub storage repository base URL for edit links (e.g., https://github.com/owner/repo)
+if (empty($githubStorage))
+	$githubStorage = getenv('GITHUB_STORAGE');
 
 // Temp PATH for graph linking temp files
 if (empty($tempPath))
@@ -131,6 +134,16 @@ if ($siteLogo and empty($customSection)) {
 										      <img class="social-logo" src="' . $uriPath . '.styles/x-color.svg" alt="X Logo">
 										    </a>
 										  </li>';
+	}
+
+	// Add storage icon/link if provided
+	if (!empty($githubStorage)) {
+		$customSection = $customSection . '
+								  <li>
+								    <a href="' . $githubStorage . '">
+								      <img class="social-logo" src="' . $uriPath . '.styles/github-color.svg" alt="Github Storage">
+								    </a>
+								  </li>';
 	}
 
 	$customSection = $customSection . '
@@ -668,6 +681,7 @@ function loadSettings($rootDir)
 	global $siteName;
 	global $siteTwitter;
 	global $uriPath;
+    global $githubStorage;
 
 
 	// get themes
@@ -731,6 +745,7 @@ function loadSettings($rootDir)
 	$defaultSettings .= '<link id="showTOC" data-option="' . $showTOC . '"</link>';
 	$defaultSettings .= '<link id="showLocalGraph" data-option="' . $showLocalGraph . '"</link>';
 	$defaultSettings .= '<link id="index" data-option="' . $index . '"</link>';
+	$defaultSettings .= '<link id="githubStorage" data-option="' . htmlspecialchars($githubStorage ?? '', ENT_QUOTES) . '"</link>';
 
 
 	return $themes . $defaultSettings;

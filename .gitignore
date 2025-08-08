@@ -31,3 +31,4 @@ __pycache__
 deploy/wiki-webhook.service
 deploy/deploy.lock
 perlite/Demo
+storage/
