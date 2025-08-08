@@ -8,6 +8,7 @@ import os
 import re
 from pathlib import Path
 from typing import Dict, List, Tuple
+from .utils import CodeMasker, Masked
 
 MD_LINK   = re.compile(r'(!?)\[(?P<text>[^\]]*)\]\((?P<url>[^)]+)\)')
 WIKI_LINK = re.compile(r'(?P<bang>!?)\[\[(?P<body>.+?)\]\]')
@@ -213,6 +214,7 @@ class Resolver:
 
     def normalize_md_links_to_wikilinks(self, current_file: Path, text: str) -> str:
         """Convert standard Markdown links to wikilinks where appropriate."""
+        masked = CodeMasker.mask(text)
         def repl(m):
             bang = m.group(1)
             url  = m.group("url").strip()
@@ -232,10 +234,12 @@ class Resolver:
 
             return f"[[{target}]]"
 
-        return MD_LINK.sub(repl, text)
+        out = MD_LINK.sub(repl, masked.text)
+        return CodeMasker.unmask(Masked(out, masked.slots))
 
     def normalize_wikilinks_in_text(self, current_file: Path, text: str) -> str:
         """Normalize wikilinks [[...]] and ![[...]] preserving alias and #anchor."""
+        masked = CodeMasker.mask(text)
         def repl(m):
             bang  = m.group("bang")
             body  = m.group("body")
@@ -253,4 +257,5 @@ class Resolver:
             if not text_target or text_target.strip() == body.strip():
                 return m.group(0)
             return f"[[{text_target}|{alias}]]" if alias is not None else f"[[{text_target}]]"
-        return WIKI_LINK.sub(repl, text)
+        out = WIKI_LINK.sub(repl, masked.text)
+        return CodeMasker.unmask(Masked(out, masked.slots))

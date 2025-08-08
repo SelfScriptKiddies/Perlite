@@ -9,6 +9,11 @@ from pathlib import Path
 from typing import List, Dict
 from .links import Resolver, is_md, WIKI_LINK, MD_LINK
 from .parse import extract_headings, parse_frontmatter_and_tags
+from .utils import CodeMasker
+
+def extract_headings_safe(text: str) -> list[dict]:
+    m = CodeMasker.mask(text)
+    return extract_headings(m.text.splitlines())
 
 def process_file(p: Path, R: Resolver) -> Dict:
     rel = R.rel_from_root(p)
@@ -27,7 +32,7 @@ def process_file(p: Path, R: Resolver) -> Dict:
             new_text = norm
         p.write_text(new_text, encoding="utf-8")
 
-    headings = extract_headings(norm.splitlines())
+    headings = extract_headings_safe(norm.splitlines())
 
     links = []
     # wikilinks (notes + anchors) — skip attachments (!)
