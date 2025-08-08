@@ -116,6 +116,36 @@ class Resolver:
                 return c.replace("\\", "/")
         # Fallback: full path from root (still without .md)
         return target_abs_no_ext.replace("\\", "/")
+    
+    def _local_suffix_from_current(self, current_file: Path, target_abs_no_ext: str) -> str | None:
+        """
+        Minimal forward-only suffix from the lowest common ancestor of
+        current note dir and target note dir to the target.
+        Example: current=CTF/pwn/Buffer overflow.md, target=CTF/pwn/fuzzing/Fuzzing
+                 -> 'fuzzing/Fuzzing'
+        Returns None if LCA is the vault root (to avoid 'CTF/...') or if equal dirs.
+        """
+        cur_dir = self.rel_from_root(current_file.parent)
+        tgt_path = Path(target_abs_no_ext)
+        tgt_dir  = tgt_path.parent.as_posix()
+
+        cur_parts = Path(cur_dir).parts
+        tgt_parts = tgt_path.parent.parts
+
+        # common prefix length
+        i = 0
+        while i < min(len(cur_parts), len(tgt_parts)) and cur_parts[i] == tgt_parts[i]:
+            i += 1
+
+        # same dir -> no need for folder
+        if i == len(tgt_parts):
+            return None
+        # LCA is vault root -> не используем длинный префикс типа 'CTF/...'
+        if i == 0:
+            return None
+
+        suffix_parts = tgt_parts[i:] + (tgt_path.name,)
+        return Path(*suffix_parts).as_posix()
 
     def _shortest_relative_from_current(self, current_file: Path, target_abs_no_ext: str) -> str:
         base = current_file.parent
