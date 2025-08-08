@@ -97,20 +97,12 @@ class Resolver:
             matches = [c for c in conflict_noext if c.endswith('/' + sfx) or c == sfx]
             return len(matches) == 1 and matches[0] == target_abs_no_ext
 
-        if len(parts) == 1:
-            return stem
-
-        candidates = []
-        for take in range(2, len(parts) + 1):
-            candidates.append(Path(*parts[-take:]).as_posix())
-        candidates.sort(key=lambda s: (s.count('/') + 1, len(s)))
-
-        if unique(candidates[0]):
-            return candidates[0]
-        for c in candidates[1:]:
+        candidates = [stem] + [Path(*parts[-take:]).as_posix() for take in range(2, len(parts) + 1)]
+        for c in candidates:
             if unique(c):
-                return c
-        return target_abs_no_ext
+                return c.replace("\\", "/")
+        # Fallback: full path from root (still without .md)
+        return target_abs_no_ext.replace("\\", "/")
 
     def _shortest_relative_from_current(self, current_file: Path, target_abs_no_ext: str) -> str:
         base = current_file.parent
