@@ -75,10 +75,23 @@ class Resolver:
             bn = candidate.name
             matches = self.BASENAME_INDEX.get(bn, []) + self.BASENAME_INDEX.get(strip_md_ext(bn), [])
             uniq = list(dict.fromkeys(matches))
-            if len(uniq) == 1:
-                out = strip_md_ext(self.rel_from_root(uniq[0]))
-            else:
+            if not uniq:
                 out = strip_md_ext(candidate.as_posix())
+            else:
+                # Prefer file in the same directory as current note
+                same_dir = [m for m in uniq if m.parent.resolve() == base.resolve()]
+                if len(same_dir) == 1:
+                    out = strip_md_ext(self.rel_from_root(same_dir[0]))
+                elif len(uniq) == 1:
+                    out = strip_md_ext(self.rel_from_root(uniq[0]))
+                else:
+                    # Rank by proximity (like attachments): same dir, then shortest relpath, then lexicographic
+                    def rank(p: Path):
+                        same = 0 if p.parent.resolve() == base.resolve() else 1
+                        rel  = to_rel(base, p)
+                        return (same, len(rel), rel)
+                    best = sorted(uniq, key=rank)[0]
+                    out = strip_md_ext(self.rel_from_root(best))
 
         if anchor:
             out += f"#{anchor}"
@@ -131,10 +144,38 @@ class Resolver:
         abs_no_ext = self.find_target_path(current_file, target)
         abs_no_ext_clean = abs_no_ext.split("#", 1)[0]
 
+        # If there is a file with this stem in the SAME directory as current note,
+        # force it as the target and keep plain stem in the wikilink.
+        stem = Path(abs_no_ext_clean).name
+        conflicts = list(dict.fromkeys(
+            self.BASENAME_INDEX.get(stem, []) + self.BASENAME_INDEX.get(Path(stem).stem, [])
+        ))
+        same_dir = [p for p in conflicts if p.parent.resolve() == current_file.parent.resolve()]
+        if same_dir:
+            # Pin target to same-dir file
+            pinned = strip_md_ext(self.rel_from_root(same_dir[0]))
+            abs_no_ext_clean = pinned
+            # text target = just stem (add anchor if any)
+            text_target = stem + (f"#{anchor}" if anchor else "")
+            meta_with_md = abs_no_ext_clean + ".md"
+            return (text_target, meta_with_md)
+
         if self.mode == "relative":
-            shortest = self._shortest_relative_from_current(current_file, abs_no_ext_clean)
+             shortest = self._shortest_relative_from_current(current_file, abs_no_ext_clean)
         else:
-            shortest = self._shortest_suffix_from_vault(abs_no_ext_clean)
+             local = self._local_suffix_from_current(current_file, abs_no_ext_clean)
+             if local:
+                 # ensure it's unique among conflicts for this stem
+                stem = Path(abs_no_ext_clean).name
+                conflicts = self._collect_conflicts(stem)
+                conflict_noext = {strip_md_ext(self.rel_from_root(p)) for p in conflicts}
+                matches = [c for c in conflict_noext if c.endswith('/' + local) or c == local]
+                if len(matches) == 1 and matches[0] == abs_no_ext_clean:
+                    shortest = local
+                else:
+                    shortest = self._shortest_suffix_from_vault(abs_no_ext_clean)
+             else:
+                 shortest = self._shortest_suffix_from_vault(abs_no_ext_clean)
 
         text_target = f"{shortest}#{anchor}" if anchor else shortest
         meta_with_md = abs_no_ext_clean + ".md"
